@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팀원소개페이지</title>
+  <!--css-->
+  <link rel="stylesheet" href="{{ url_for('static',filename = 'style3.css')}}">
+  <!--js-->
+  <script src="/function.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div class="banner-txt">
+        <h1>팀원소개</h1>
+        <span>개발자가 될 1조를 소개합니다.</span>
+      </div>
+    </header>
+    <main>
+      <div class="team-cards">
+        <div class="card">
+          <div class="card-txt">
+            <h2>황재중</h2>
+            <span>Frontend Engineer</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-txt">
+            <h2>서명진</h2>
+            <span>Frontend Engineer</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-txt">
+            <h2>김신형</h2>
+            <span>backend Engineer</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-txt">
+            <h2>윤병남</h2>
+            <span>backend Engineer</span>
+          </div>
+        </div>
+      </div>
+      <div class="visit">
+        <div class="visit-inner">
+          <h1>방명록</h1>
+          <input type="text" id="visiter" placeholder="작성자"><br>
+          <textarea id="writing" cols="4" rows="10" placeholder="방명록을 남겨주세요"></textarea><br>
+          <button id="send">입력</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

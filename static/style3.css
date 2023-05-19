@@ -1,0 +1,158 @@
+/* Font - Kanit */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap");
+
+/* Font - Noto Sans KR */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap");
+
+body {
+  line-height: 1.7em;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+/*header*/
+header {
+  margin: 0;
+  width: 100%;
+  height: 540px;
+  background: url(images/banner.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-txt {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.banner-txt h1 {
+  font-weight: normal;
+  font-size: 70px;
+  margin-bottom: 100px;
+}
+
+.banner-txt h1::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 60%;
+  left: 45%;
+}
+
+.banner-txt span {
+  font-size: 36px;
+}
+
+/*main - content*/
+main {
+  width: 1300px;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 150px;
+  position: relative;
+}
+
+.team-cards {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  margin: 50px 0 50px 0;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.158);
+  display: inline-block;
+  flex: 1;
+  position: relative;
+}
+
+.card:hover {
+  transform:scale(1.3);
+  transition: transform .5s;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card-txt {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top: 100%;
+  text-align: center;
+}
+
+.card:nth-child(1) {
+  background: url(images/hjj.jpg);
+  background-size: cover;
+}
+
+.card:nth-child(2) {
+  margin-left: 30px;
+  background: url(images/smj.jpg);
+}
+
+.card:nth-child(3) {
+  margin: 0 30px;
+  background: url(images/ksh.png);
+  background-size: cover;
+}
+
+.card:nth-child(4) {
+  background: url(images/ybn.png);
+  background-size: cover;
+}
+
+/*visit - content*/
+.visit {
+  position: absolute;
+  top: 60%;
+  width: 1300px;
+  height: 390px;
+  background-color: #f3f4f4;
+  margin-bottom: 250px;
+}
+
+.visit-inner {
+  width: 1140px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: hidden;
+}
+
+.visit h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#visiter {
+  height: 30px;
+}
+
+textarea {
+  width: 1130px;
+  margin-top: 20px;
+}
+
+button {
+  width: 121px;
+  height: 41px;
+  font-size: 19px;
+  color: #fff;
+  border: none;
+  background-color: #1eaecc;
+  margin-top: 10px;
+}

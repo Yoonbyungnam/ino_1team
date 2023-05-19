@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팀원소개페이지</title>
+    <!--css-->
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'style3.css')}}"/>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+    />
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+    ></script>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet"
+    />
+    
+    <!--js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/2c827c8cca.js" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function () {
+        show_comment();
+      });
+      function save_comment() {
+        let name = $("#name").val();
+        let comment = $("#comment").val();
+
+        let formData = new FormData();
+        formData.append("name_give", name);
+        formData.append("comment_give", comment);
+
+        fetch("/guestbook", { method: "POST", body: formData })
+          .then((res) => res.json())
+          .then((data) => {
+            alert(data["msg"]);
+            window.location.reload();
+          });
+      }
+      function show_comment() {
+        fetch('/guestbook').then((res) => res.json()).then((data) => {
+		    let rows = data['result']
+        $('#guest-card').empty()
+        rows.forEach((a)=>{
+            let name = a['name']
+            let comment = a['comment']
+
+            console.log(name, comment);
+            let temp_html = `<div class = "onecard">
+                                <p>${name}</p>
+                                <p>${comment}</p>
+                              </div>` 
+          $('#guest-card').append(temp_html)                            
+        })
+		})
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <div class="banner-txt">
+          <h1>팀원소개</h1>
+          <span>개발자가 될 1조를 소개합니다.</span>
+        </div>
+      </header>
+      <main>
+        <div>
+          <h5><i class="fa-solid fa-star" style="color: #fff94d;"></i>저희 조는 주어진 임무를 성실하게 완수하는 것이 목표입니다!</h5>
+          <h4><i class="fa-solid fa-star" style="color: #fff94d;"></i>모르는 부분이 있으면 편하게 질문하기~</h4>
+        </div>
+        <div class="team-cards">
+          <div class="card">
+            <div class="card-txt">
+              <h2>황재중</h2>
+              <span>Frontend Engineer</span>
+              <a href="{{url_for('wjj')}}"><i class="fa-solid fa-heart" style="color: #c93b22;"></i></a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-txt">
+              <h2>서명진</h2>
+              <span>Frontend Engineer</span>
+              <a href="{{url_for('smj')}}"><i class="fa-solid fa-heart" style="color: #c93b22;"></i></a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-txt">
+              <h2>김신형</h2>
+              <span>backend Engineer</span>
+              <a href="{{url_for('ksh')}}"><i class="fa-solid fa-heart" style="color: #c93b22;"></i></a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-txt">
+              <h2>윤병남</h2>
+              <span>backend Engineer</span>
+              <a href="http://myweb.eba-vs83k984.ap-northeast-2.elasticbeanstalk.com/#a2"><i class="fa-solid fa-heart" style="color: #c93b22;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="visit">
+          <div class="visit-inner">
+            <h1>방명록</h1>
+            <input type="text" id="name" placeholder="작성자"/><br/>
+            <textarea id="comment" cols="4" rows="10" placeholder="방명록을 남겨주세요!"></textarea><br/>
+            <button id="send" onclick="save_comment()">입력</button>
+
+            
+            <div style = "margin-top:100px;"id = "guest-card">
+              <div class = "onecard">
+                <p>0000</p>
+                <p>입력해주세요!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </body>
+</html>

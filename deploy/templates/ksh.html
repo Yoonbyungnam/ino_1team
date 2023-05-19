@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mypage</title>
+    <style>
+        #container {
+            position: relative;
+        }
+
+        #inner {
+            width: 800px;
+            height: 600px;
+            background-color: rgb(199, 196, 196);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10%;
+        }
+
+        .text-and-image {
+            position: absolute;
+            top: 30%;
+            left: 10%;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            background-color: white;
+            box-shadow: 5px 5px 5px 5px gray;
+            width: 340px;
+            height: 260px;
+        }
+
+        .content> :nth-child(1) {
+            position: absolute;
+            top: 10%;
+            margin: 0 20px 0 20px; 
+        }
+
+        #name {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        #profilebox {
+            width: 200px;
+            height: 200px;
+            border-radius: 70%;
+            overflow: hidden;
+            margin: 0 25px 0 25px;
+        }
+
+        #profileimg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="inner">
+            <div class="text-and-image">
+                <div class="row">
+                    <div class="column">
+                        <div id="profilebox">
+                            <img id="profileimg"
+                                src="https://media.4-paws.org/1/e/d/6/1ed6da75afe37d82757142dc7c6633a532f53a7d/VIER%20PFOTEN_2019-03-15_001-2886x1999-1920x1330.jpg">
+                        </div>
+                        <div id="name">김신형</div>
+                    </div>
+                    <div class="content">
+                        <div class="content-inner">
+                            MBTI - ISFP </br></br>
+                            친해지면 아주 편한 스타일입니다🙂 </br></br>
+                            팀에서 모두가 참여할 수 있게 대화를 하는 것을 좋아하고, 누가 질문하면 열심으로 답해주고, 답할 수 없는 질문은 같이 찾아줍니다.</br></br>
+                            <a href="https://babyadventure.tistory.com/">Blog고고</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

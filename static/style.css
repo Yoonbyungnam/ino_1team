@@ -1,0 +1,23 @@
+*{
+    font-family: 'Lora', serif;
+}
+.cardstyle{
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    margin-right:100px;
+}
+
+footer{
+    margin-top: 200px;
+    background-color:lightgrey;
+    color:white;
+}
+.second-line a{
+    color:white;
+    text-decoration:none;
+  }
+.second-line a:hover{
+    color:gray;
+}
+
